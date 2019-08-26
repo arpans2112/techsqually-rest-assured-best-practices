@@ -20,12 +20,35 @@
         </plugins>
     </build>
 
+    <!--USAGE: https://github.com/rest-assured/rest-assured/wiki/Usage#static-imports-->
+    <!--JAVA DOCS: https://www.javadoc.io/doc/io.rest-assured/rest-assured/4.0.0-->
+    <!--JSON PATH: https://github.com/json-path/JsonPath-->
+
     <dependencies>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>4.0.0</version>
         </dependency>
+
+        <!--Json schema validator-->
+        <!--http://json-schema.org/-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
+        <!--In order to use OAuth 1 and OAuth 2 (for query parameter signing)
+           you need to add Scribe to your classpath, not teqired after 2.5.0-->
+
+      <!--  <dependency>
+            <groupId>com.github.scribejava</groupId>
+            <artifactId>scribejava-apis</artifactId>
+            <version>2.5.3</version>
+            <scope>test</scope>
+        </dependency>-->
+
     </dependencies>
 
 </project>
