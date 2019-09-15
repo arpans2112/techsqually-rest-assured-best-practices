@@ -1,10 +1,14 @@
-package utilities;
+package utilitiesTests;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import utilities.RelativePathVariables;
+import utilities.ResourceUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -12,15 +16,22 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ResourceUtils implements RelativePathVariables{
+public class ResourceUtilsTest implements RelativePathVariables {
 
+    public static void main(String[] args) {
 
+        System.out.println(getRelativeResourcePath("conf/devqe/dummyapi","default-api.properties"));
+        System.out.println(getResourcePathAsString("data/dummy/features/employee/createEmployee.json"));;
+        getPropertiesFileAsMap("dummyapi" , "default-api");
+        getPropertiesFileAsMap("dummyapi" , "defaultapim-api");
 
-    public static HashMap<String,String> getPropertiesFileAsMap(String app, String fileName){
+    }
 
-        String rootDirectory = DEFAULT_DIR_PATH_PROPERTIES+"/"+System.getProperty("env")+"/"+app;
-        String relativePath = getRelativeResourcePath(rootDirectory,fileName+".properties");
-        String completePath = getResourcePathAsString(relativePath);;
+    public static Map<String,String> getPropertiesFileAsMap(String app, String fileName){
+
+       String rootDirectory = DEFAULT_DIR_PATH_PROPERTIES+"/"+System.getProperty("env")+"/"+app;
+       String relativePath = getRelativeResourcePath(rootDirectory,fileName+".properties");
+       String completePath = getResourcePathAsString(relativePath);;
 
         Properties properties  = new Properties();
         File file = new File(completePath);
@@ -38,8 +49,6 @@ public class ResourceUtils implements RelativePathVariables{
 
     }
 
-
-
     /*
     * @path : String path : gives the path of the json file after the resource folder
     * @return: it returns the full path for that file
@@ -48,7 +57,7 @@ public class ResourceUtils implements RelativePathVariables{
     * */
     public static String getResourcePathAsString(String path){
 
-       URL url = Optional.ofNullable(ResourceUtils.class.getClassLoader().getResource(path)).orElseThrow(() -> {
+       URL url = Optional.ofNullable(ResourceUtilsTest.class.getClassLoader().getResource(path)).orElseThrow(() -> {
              return new RuntimeException("There is no resouece by path " + path);
         });
 
@@ -76,7 +85,7 @@ public class ResourceUtils implements RelativePathVariables{
 
         //It gets the list of all the file from the given root Directories and sub directories
         try {
-            LinkedList<String> fileList = FileUtils.listFiles(new File(ResourceUtils.class.getClassLoader().getResource(rootDirectory).getPath()),(String[])null,true)
+            LinkedList<String> fileList = FileUtils.listFiles(new File(ResourceUtilsTest.class.getClassLoader().getResource(rootDirectory).getPath()),(String[])null,true)
                     .stream().filter(file -> {
                         return file.getName().equalsIgnoreCase(resourceName);
             }).map(File::toURI).map(URI::getPath).collect(Collectors.toCollection(LinkedList::new));
@@ -90,7 +99,7 @@ public class ResourceUtils implements RelativePathVariables{
                 return fileList.getFirst().substring(fileList.getFirst().indexOf(rootDirectory));
             }
         } catch (NullPointerException e) {
-             throw new RuntimeException("Root Directory " + rootDirectory + "is not found");
+             throw new RuntimeException("Root Directory " + rootDirectory + " is not found");
         }
 
     }

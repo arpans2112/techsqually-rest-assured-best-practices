@@ -3,6 +3,9 @@ package api.dummyapi;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import utilities.ResourceUtils;
+
+import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 
@@ -11,7 +14,9 @@ public class CreateEmployee {
     public static void main(String[] args) {
 
         //Create a Employee
-        RestAssured.baseURI = "http://dummy.restapiexample.com";
+        HashMap<String,String> defaultProperties = ResourceUtils.getPropertiesFileAsMap("dummyapi","default-api");
+        RestAssured.baseURI = defaultProperties.get("resource.baseUrl");
+
 
         int x = ((int)(Math.random() * 100000)) % 1000;
         String randomint = String.valueOf(x);
