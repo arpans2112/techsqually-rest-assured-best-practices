@@ -1,6 +1,4 @@
-package utilities;
-
-import jdk.nashorn.internal.runtime.regexp.RegExp;
+package utilities.java;
 
 public class EnvironmentNameTransformUtils {
 

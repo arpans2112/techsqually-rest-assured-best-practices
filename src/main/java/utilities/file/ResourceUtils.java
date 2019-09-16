@@ -1,4 +1,4 @@
-package utilities;
+package utilities.file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
@@ -48,7 +48,7 @@ public class ResourceUtils implements RelativePathVariables , FileExtensionType{
 
 
     public static String getResourceDataFilePath(String microServiceAppName, String fileName){
-        String rootDirector = DEFAULT_DIR_CONF_PROPERTIES +  microServiceAppName;
+        String rootDirector = DEFAULT_DIR_CONF_PROPERTIES + "/" + microServiceAppName;
         String relativePath = getRelativeResourcePath(rootDirector,fileName + JSON);
         String completePath = getResourcePathAsString(relativePath);
         return completePath;
@@ -61,7 +61,7 @@ public class ResourceUtils implements RelativePathVariables , FileExtensionType{
 
 
     public static String getResourceTopicFilePath(String microServiceAppName, String fileName){
-        String rootDirector = DEFAULT_DIR_TOPICS_YAML_RESOURCE +  microServiceAppName;
+        String rootDirector = DEFAULT_DIR_TOPICS_YAML_RESOURCE + "/" + microServiceAppName;
         String relativePath = getRelativeResourcePath(rootDirector,fileName + YAML);
         String completePath = getResourcePathAsString(relativePath);
         return completePath;

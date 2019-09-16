@@ -1,9 +1,8 @@
 package api.dummyapi;
 
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import utilities.ResourceUtils;
+import utilities.file.ResourceUtils;
 
 import java.util.HashMap;
 

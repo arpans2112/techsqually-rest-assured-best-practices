@@ -1,15 +1,15 @@
-package utilities;
+package utilities.api;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utilities.file.ResourceUtils;
+import utilities.yaml.TopicMetaData;
 
 import java.io.IOException;
 import java.util.Map;
 
 public class ApiEventBuilder {
 
-
-    private static final String PATH_TOPIC_METADATA = "topics";
     private static final Logger logger = LoggerFactory.getLogger(ApiEventBuilder.class);
     private String name;
     private String topicName;

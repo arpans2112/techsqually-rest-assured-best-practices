@@ -2,7 +2,7 @@ package utilitiesTests;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
-import utilities.RelativePathVariables;
+import utilities.file.RelativePathVariables;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,7 +26,7 @@ public class ResourceUtilsTest implements RelativePathVariables {
 
     public static Map<String,String> getPropertiesFileAsMap(String app, String fileName){
 
-       String rootDirectory = DEFAULT_DIR_PATH_PROPERTIES+"/"+System.getProperty("env")+"/"+app;
+       String rootDirectory = DEFAULT_DIR_CONF_PROPERTIES+"/"+System.getProperty("env")+"/"+app;
        String relativePath = getRelativeResourcePath(rootDirectory,fileName+".properties");
        String completePath = getResourcePathAsString(relativePath);;
 

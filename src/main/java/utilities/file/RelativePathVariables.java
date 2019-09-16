@@ -1,4 +1,4 @@
-package utilities;
+package utilities.file;
 
 public interface RelativePathVariables {
 

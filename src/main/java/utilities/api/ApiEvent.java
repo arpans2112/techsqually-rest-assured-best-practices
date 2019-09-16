@@ -1,4 +1,4 @@
-package utilities;
+package utilities.api;
 
 
 import org.apache.commons.lang3.StringUtils;
