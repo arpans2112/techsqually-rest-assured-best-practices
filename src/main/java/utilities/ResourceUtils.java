@@ -1,10 +1,13 @@
 package utilities;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -12,16 +15,13 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ResourceUtils implements RelativePathVariables{
+public class ResourceUtils implements RelativePathVariables , FileExtensionType{
 
+    private static final ObjectMapper YAML_MAPPER = new ObjectMapper(new YAMLFactory());
 
+    public static HashMap<String,String> getPropertiesFileAsMap(String microServiceAppName, String fileName){
 
-    public static HashMap<String,String> getPropertiesFileAsMap(String app, String fileName){
-
-        String rootDirectory = DEFAULT_DIR_PATH_PROPERTIES+"/"+System.getProperty("env")+"/"+app;
-        String relativePath = getRelativeResourcePath(rootDirectory,fileName+".properties");
-        String completePath = getResourcePathAsString(relativePath);;
-
+        String completePath = getResourceConfFilePath(microServiceAppName, fileName);
         Properties properties  = new Properties();
         File file = new File(completePath);
         FileInputStream fileInputStream;
@@ -39,6 +39,33 @@ public class ResourceUtils implements RelativePathVariables{
     }
 
 
+    public static String getResourceConfFilePath(String microServiceAppName, String fileName){
+        String rootDirectory = DEFAULT_DIR_CONF_PROPERTIES+"/"+System.getProperty("env")+"/"+microServiceAppName;
+        String relativePath = getRelativeResourcePath(rootDirectory,fileName+ PROPERTY);
+        String completePath = getResourcePathAsString(relativePath);
+        return completePath;
+    }
+
+
+    public static String getResourceDataFilePath(String microServiceAppName, String fileName){
+        String rootDirector = DEFAULT_DIR_CONF_PROPERTIES +  microServiceAppName;
+        String relativePath = getRelativeResourcePath(rootDirector,fileName + JSON);
+        String completePath = getResourcePathAsString(relativePath);
+        return completePath;
+    }
+
+
+    public static <T> T readYamlResource(String microServiceAppName, String fileName , Class<T> clazz) throws IOException {
+      return YAML_MAPPER.readValue(getResourceTopicFilePath(microServiceAppName,fileName),clazz);
+    }
+
+
+    public static String getResourceTopicFilePath(String microServiceAppName, String fileName){
+        String rootDirector = DEFAULT_DIR_TOPICS_YAML_RESOURCE +  microServiceAppName;
+        String relativePath = getRelativeResourcePath(rootDirector,fileName + YAML);
+        String completePath = getResourcePathAsString(relativePath);
+        return completePath;
+    }
 
     /*
     * @path : String path : gives the path of the json file after the resource folder
