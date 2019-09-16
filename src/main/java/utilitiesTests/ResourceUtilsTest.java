@@ -3,12 +3,9 @@ package utilitiesTests;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import utilities.RelativePathVariables;
-import utilities.ResourceUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -21,7 +18,7 @@ public class ResourceUtilsTest implements RelativePathVariables {
     public static void main(String[] args) {
 
         System.out.println(getRelativeResourcePath("conf/devqe/dummyapi","default-api.properties"));
-        System.out.println(getResourcePathAsString("data/dummy/features/employee/createEmployee.json"));;
+        System.out.println(getResourcePathAsString("data/google/api/features/employee/createEmployee.json"));;
         getPropertiesFileAsMap("dummyapi" , "default-api");
         getPropertiesFileAsMap("dummyapi" , "defaultapim-api");
 

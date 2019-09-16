@@ -1,0 +1,10 @@
+headers:
+  Content-Type: application/json
+  Accept: application/json
+  requestType: GET
+  apiServer: default
+
+ServiceName: /api/v1/create
+defaultBodyPath: data/dummy/features/employee/createEmployee.json
+
+
