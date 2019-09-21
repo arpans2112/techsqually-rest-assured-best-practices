@@ -56,7 +56,7 @@ public class ResourceUtils implements RelativePathVariables , FileExtensionType{
 
 
     public static <T> T readYamlResource(String microServiceAppName, String fileName , Class<T> clazz) throws IOException {
-      return YAML_MAPPER.readValue(getResourceTopicFilePath(microServiceAppName,fileName),clazz);
+          return YAML_MAPPER.readValue(new File(getResourceTopicFilePath(microServiceAppName,fileName)),clazz);
     }
 
 

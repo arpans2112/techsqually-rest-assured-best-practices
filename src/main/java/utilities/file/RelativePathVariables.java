@@ -7,6 +7,4 @@ public interface RelativePathVariables {
    String DEFAULT_DIR_TOPICS_YAML_RESOURCE = "topics";
    String DEFAULT_DIR_FEATURE_RESOURCE = "feature";
 
-
-
 }

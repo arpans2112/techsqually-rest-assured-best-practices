@@ -1,4 +1,4 @@
-package utilities;
+package utilities.yaml;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ public class TopicMetaData {
     private String serviceName;
     private String schemaNameKey;
     private String defaultBodyPathKey;
-    private Integer partition;
+    private int partition;
 
     public TopicMetaData(){
     }
