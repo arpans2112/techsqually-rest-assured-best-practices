@@ -61,10 +61,12 @@ public class ResourceUtils implements RelativePathVariables , FileExtensionType{
 
 
     public static String getResourceTopicFilePath(String microServiceAppName, String fileName){
+
         String rootDirector = DEFAULT_DIR_TOPICS_YAML_RESOURCE + "/" + microServiceAppName;
         String relativePath = getRelativeResourcePath(rootDirector,fileName + YAML);
         String completePath = getResourcePathAsString(relativePath);
         return completePath;
+
     }
 
     /*
