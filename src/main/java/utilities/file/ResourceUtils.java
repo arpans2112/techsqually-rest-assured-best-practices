@@ -48,7 +48,7 @@ public class ResourceUtils implements RelativePathVariables , FileExtensionType{
 
 
     public static String getResourceDataFilePath(String microServiceAppName, String fileName){
-        String rootDirector = DEFAULT_DIR_CONF_PROPERTIES + "/" + microServiceAppName;
+        String rootDirector = DEFAULT_DIR_DATA_JSON_RESOURCE + "/" + microServiceAppName;
         String relativePath = getRelativeResourcePath(rootDirector,fileName + JSON);
         String completePath = getResourcePathAsString(relativePath);
         return completePath;
