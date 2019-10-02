@@ -2,6 +2,7 @@ package utilities.file;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 import org.json.simple.parser.JSONParser;
 
@@ -10,7 +11,7 @@ import java.io.IOException;
 
 public class JsonUtils {
 
-
+  private ObjectMapper mapper = new ObjectMapper();
 
     /**
      * @param : applicationFolderName (e.g dummy , google,jsons)
