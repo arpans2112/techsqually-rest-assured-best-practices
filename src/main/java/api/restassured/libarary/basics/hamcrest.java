@@ -6,7 +6,7 @@ public class hamcrest {
 //    get("/lotto").then().body("lotto.lottoId", equalTo(5));
 //    get("/lotto").then().body("lotto.winners.winnerId", hasItems(23, 54));
 //    get("/price").then().body("price", is(12.12f));
-
+//get("/price").then().get("/price").then().body("price", is(new BigDecimal(12.12));
 
 
     /*
@@ -16,7 +16,7 @@ public class hamcrest {
 when().
         get("/price").
 then().
-        body("price", is(new BigDecimal(12.12));
+
     * */
 
 
