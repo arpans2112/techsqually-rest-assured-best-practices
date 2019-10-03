@@ -17,6 +17,6 @@ public class JsonScemaValidation {
         /**
          * Assert json scehma valiation using hamcrest assert That method
         * */
-//        assertThat(jsonResponseBody, matchesJsonSchemaInClasspath("greeting-schema.json"));
+        assertThat("jsonResponseBody", matchesJsonSchemaInClasspath("greeting-schema.json"));
     }
 }

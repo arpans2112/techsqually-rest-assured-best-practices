@@ -1,4 +1,4 @@
-package api.restassured.libarary.basics;
+package api.restassured.libarary.basics.hamcrest;
 
 public class hamcrest {
 
