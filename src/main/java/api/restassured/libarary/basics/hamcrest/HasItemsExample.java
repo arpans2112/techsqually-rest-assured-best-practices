@@ -6,6 +6,8 @@ import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.when;
 import static io.restassured.path.json.JsonPath.from;
 import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class HasItemsExample {
 
@@ -28,6 +30,15 @@ public class HasItemsExample {
               // And get all books with price < 10 from the response. "from" is statically imported from the JsonPath class
              List<String> bookTitles = from(response).getList("store.book.findAll { it.price < 10 }.title");
 
+
+
+
+        // Get the response body as a string
+        String responseString = get("/store").asString();
+     // Get the sum of all author length's as an int. "from" is again statically imported from the JsonPath class
+        int sumOfAllAuthorLengths = from(responseString).getInt("store.book.author*.length().sum()");
+     // We can also assert that the sum is equal to 53 as expected.
+        assertThat(sumOfAllAuthorLengths, is(53));
 
     }
 }
