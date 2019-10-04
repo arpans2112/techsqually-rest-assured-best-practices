@@ -26,6 +26,7 @@ public class AbstractBaseZippopotamAPIUtil {
 
      responseSpecification = new ResponseSpecBuilder().
                                           expectContentType(ContentType.JSON).
+                                          expectStatusCode(200).
                                            build();
 
 
