@@ -11,6 +11,7 @@ public class ReadingDate {
 
         String json = "{\"date_as_long\" : 1411455611975}";
 
+
         /**
          *  Returns date in format
          * Tue Sep 23 02:00:11 CDT 2014
