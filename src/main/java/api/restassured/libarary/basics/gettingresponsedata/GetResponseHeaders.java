@@ -44,7 +44,7 @@ public class GetResponseHeaders extends AbstractBaseZippopotamAPIUtil {
         int statusCode = response.getStatusCode();
         System.out.println(statusCode);
 
-     
+
 
 
 
