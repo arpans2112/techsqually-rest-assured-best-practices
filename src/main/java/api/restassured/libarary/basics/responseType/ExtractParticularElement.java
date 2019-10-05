@@ -1,4 +1,4 @@
-package api.restassured.libarary.basics.get.responseType;
+package api.restassured.libarary.basics.responseType;
 
 import api.zippopotam.AbstractBaseZippopotamAPIUtil;
 import io.restassured.http.ContentType;

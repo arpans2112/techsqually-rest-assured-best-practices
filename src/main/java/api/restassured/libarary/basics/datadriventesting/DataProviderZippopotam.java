@@ -1,4 +1,4 @@
-package api.restassured.libarary.basics.get.datadriventesting;
+package api.restassured.libarary.basics.datadriventesting;
 
 
 import org.testng.annotations.DataProvider;

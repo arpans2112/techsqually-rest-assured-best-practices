@@ -1,4 +1,4 @@
-package api.restassured.libarary.basics.get.gettingResponseData;
+package api.restassured.libarary.basics.gettingresponsedata;
 
 import api.zippopotam.AbstractBaseZippopotamAPIUtil;
 import io.restassured.http.ContentType;
@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class ExtractingMultipleValueFromResponse extends AbstractBaseZippopotamAPIUtil {
+public class ExtractingMultipleValueFromResponseUsingResponseClass extends AbstractBaseZippopotamAPIUtil {
 
     @Test
     public void extractingMultipleValueFromResponse(){

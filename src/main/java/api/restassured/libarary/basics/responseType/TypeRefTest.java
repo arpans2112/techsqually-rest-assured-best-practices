@@ -1,9 +1,8 @@
-package api.restassured.libarary.basics.get.responseType;
+package api.restassured.libarary.basics.responseType;
 
 import api.zippopotam.AbstractBaseZippopotamAPIUtil;
 
 import io.restassured.common.mapper.TypeRef;
-import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
 import java.util.List;

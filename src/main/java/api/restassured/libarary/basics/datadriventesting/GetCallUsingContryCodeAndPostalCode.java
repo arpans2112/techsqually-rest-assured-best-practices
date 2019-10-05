@@ -1,9 +1,6 @@
-package api.restassured.libarary.basics.get.datadriventesting;
+package api.restassured.libarary.basics.datadriventesting;
 
 import io.restassured.RestAssured;
-import io.restassured.config.JsonConfig;
-import io.restassured.path.json.config.JsonPathConfig;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
