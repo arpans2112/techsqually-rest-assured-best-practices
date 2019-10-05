@@ -1,6 +1,6 @@
 package api.restassured.libarary.basics.gettingresponsedata;
 
-import api.zippopotam.AbstractBaseZippopotamAPIUtil;
+import api.common.abstractapiutil.AbstractBaseZippopotamAPIUtil;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;

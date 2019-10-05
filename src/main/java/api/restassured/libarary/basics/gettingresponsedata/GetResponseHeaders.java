@@ -1,11 +1,8 @@
 package api.restassured.libarary.basics.gettingresponsedata;
 
-import api.zippopotam.AbstractBaseZippopotamAPIUtil;
-import io.restassured.http.ContentType;
+import api.common.abstractapiutil.AbstractBaseZippopotamAPIUtil;
 import io.restassured.http.Cookies;
-import io.restassured.http.Headers;
 import io.restassured.response.Response;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 

@@ -1,13 +1,11 @@
 package api.restassured.libarary.basics.gettingresponsedata;
-import api.zippopotam.AbstractBaseZippopotamAPIUtil;
+import api.common.abstractapiutil.AbstractBaseZippopotamAPIUtil;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
