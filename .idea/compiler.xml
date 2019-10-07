@@ -7,7 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rest-assured-best-practices" />
+        <module name="techsqually-rest-assured-best-practices" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="techsqually-rest-assured-best-practices" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

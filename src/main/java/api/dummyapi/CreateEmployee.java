@@ -2,6 +2,7 @@ package api.dummyapi;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import utilities.file.PropertyFileActionsUtil;
 import utilities.file.ResourceUtils;
 
 import java.util.HashMap;
@@ -13,7 +14,7 @@ public class CreateEmployee {
     public static void main(String[] args) {
 
         //Create a Employee
-        HashMap<String,String> defaultProperties = ResourceUtils.getPropertiesFileAsMap("dummyapi","default-api");
+        HashMap<String,String> defaultProperties = PropertyFileActionsUtil.getPropertiesFileAsMap("dummyapi","default-api");
         RestAssured.baseURI = defaultProperties.get("resource.baseUrl");
 
 

@@ -19,29 +19,14 @@ public class ResourceUtils implements RelativePathVariables , FileExtensionType{
 
     private static final ObjectMapper YAML_MAPPER = new ObjectMapper(new YAMLFactory());
 
-    public static HashMap<String,String> getPropertiesFileAsMap(String microServiceAppName, String fileName){
 
-        String completePath = getResourceConfFilePath(microServiceAppName, fileName);
-        Properties properties  = new Properties();
-        File file = new File(completePath);
-        FileInputStream fileInputStream;
-        try {
-            fileInputStream = new FileInputStream(file);
-            properties.load(fileInputStream);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new IllegalArgumentException("There is no file found with name " + file);
-        }
-
-        HashMap<String,String> propertiesMap = new HashMap(properties);
-        return propertiesMap;
-
-    }
 
 
     public static String getResourceConfFilePath(String microServiceAppName, String fileName){
+
         String rootDirectory = DEFAULT_DIR_CONF_PROPERTIES+"/"+System.getProperty("env")+"/"+microServiceAppName;
-        String relativePath = getRelativeResourcePath(rootDirectory,fileName+ PROPERTY);
+        String _r = fileName + (fileName.endsWith(PROPERTY) ? "" : ".properties");
+        String relativePath = getRelativeResourcePath(rootDirectory,_r);
         String completePath = getResourcePathAsString(relativePath);
         return completePath;
     }
@@ -49,7 +34,8 @@ public class ResourceUtils implements RelativePathVariables , FileExtensionType{
 
     public static String getResourceDataFilePath(String microServiceAppName, String fileName){
         String rootDirector = DEFAULT_DIR_DATA_JSON_RESOURCE + "/" + microServiceAppName;
-        String relativePath = getRelativeResourcePath(rootDirector,fileName + JSON);
+        String _r = fileName + (fileName.endsWith(JSON) ? "" : ".json");
+        String relativePath = getRelativeResourcePath(rootDirector,_r);
         String completePath = getResourcePathAsString(relativePath);
         return completePath;
     }
@@ -63,7 +49,8 @@ public class ResourceUtils implements RelativePathVariables , FileExtensionType{
     public static String getResourceTopicFilePath(String microServiceAppName, String fileName){
 
         String rootDirector = DEFAULT_DIR_TOPICS_YAML_RESOURCE + "/" + microServiceAppName;
-        String relativePath = getRelativeResourcePath(rootDirector,fileName + YAML);
+        String _r = fileName + (fileName.endsWith(YAML) ? "" : ".yaml");
+        String relativePath = getRelativeResourcePath(rootDirector,_r);
         String completePath = getResourcePathAsString(relativePath);
         return completePath;
 
