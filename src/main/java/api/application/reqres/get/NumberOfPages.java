@@ -1,4 +1,4 @@
-package api.reqres.get;
+package api.application.reqres.get;
 
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;

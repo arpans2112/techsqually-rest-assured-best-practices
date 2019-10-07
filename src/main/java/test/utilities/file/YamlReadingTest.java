@@ -1,4 +1,4 @@
-package utilitiesTests;
+package test.utilities.file;
 
 import utilities.file.ResourceUtils;
 import utilities.yaml.TopicMetaData;
