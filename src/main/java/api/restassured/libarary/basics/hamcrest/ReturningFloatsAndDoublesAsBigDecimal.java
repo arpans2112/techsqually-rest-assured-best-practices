@@ -1,4 +1,4 @@
-package scenarios;
+package api.restassured.libarary.basics.hamcrest;
 
 import io.restassured.RestAssured;
 

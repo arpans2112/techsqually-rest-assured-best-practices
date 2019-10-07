@@ -1,12 +1,8 @@
-package api.zippopotam;
+package api.application.zippopotam;
 
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 

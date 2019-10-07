@@ -1,4 +1,4 @@
-package api.restassured.libarary.basics.get;
+package api.restassured.libarary.basics.specifyrequestdata;
 
 import api.common.abstractapiutil.AbstractBaseZippopotamAPIUtil;
 import io.restassured.http.ContentType;
@@ -6,14 +6,14 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RequestSpecificationTest extends AbstractBaseZippopotamAPIUtil {
+public class Cookie extends AbstractBaseZippopotamAPIUtil {
 
 
     @Test
     public void requestSpecificationTest(){
-        given().
+        given().log().all().
                 /**Setting Request Specification in AbstractBaseAPIUtil*/
-               spec(requestSpecification).log().all().
+               spec(requestSpecification).
          when().
                 get("us/90210").
          then().log().all().
