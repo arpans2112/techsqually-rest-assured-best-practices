@@ -1,6 +1,7 @@
 package utilities.file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -18,7 +19,6 @@ import java.util.stream.Collectors;
 public class ResourceUtils implements RelativePathVariables , FileExtensionType{
 
     private static final ObjectMapper YAML_MAPPER = new ObjectMapper(new YAMLFactory());
-
 
 
 

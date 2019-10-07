@@ -19,7 +19,7 @@ public class ResourceUtilsTest implements RelativePathVariables {
 
 //        System.out.println(getRelativeResourcePath("conf/devqe/dummyapi","default-api.properties"));
 //        System.out.println(getResourcePathAsString("data/google/api/features/employee/createEmployee.json"));;
-        getPropertiesFileAsMap("dummy/api" , "default-api");
+        getPropertiesFileAsMap("test/api" , "default-api");
         getPropertiesFileAsMap("dummy/api" , "defaultapim-api");
 
     }

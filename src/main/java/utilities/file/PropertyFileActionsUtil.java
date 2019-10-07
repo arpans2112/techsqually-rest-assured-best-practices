@@ -43,8 +43,8 @@ public class PropertyFileActionsUtil {
 
 
     public static HashMap<String,String> getPropertiesFileAsMap(String microServiceAppName, String fileName){
-
-        String completePath = ResourceUtils.getResourceConfFilePath(microServiceAppName, fileName);
+        ResourceUtils resourceUtils = new ResourceUtils();
+        String completePath = resourceUtils.getResourceConfFilePath(microServiceAppName, fileName);
         Properties properties  = new Properties();
         File file = new File(completePath);
         FileInputStream fileInputStream;
