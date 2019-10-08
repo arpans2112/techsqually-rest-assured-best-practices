@@ -1,5 +1,5 @@
 package api.restassured.libarary.basics.gettingresponsedata;
-import api.common.abstractapiutil.AbstractBaseZippopotamAPIUtil;
+import api.common.applicaiton.zippopotam.abstractapiutil.AbstractBaseZippopotamAPIUtil;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;

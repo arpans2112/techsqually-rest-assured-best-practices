@@ -14,7 +14,7 @@ public class CreateEmployee {
     public static void main(String[] args) {
 
         //Create a Employee
-        HashMap<String,String> defaultProperties = PropertyFileActionsUtil.getPropertiesFileAsMap("dummyapi","default-api");
+        HashMap<String,String> defaultProperties = PropertyFileActionsUtil.getPropertiesFileAsMap("dummy/api","default-api");
         RestAssured.baseURI = defaultProperties.get("resource.baseUrl");
 
 
@@ -22,7 +22,7 @@ public class CreateEmployee {
         String randomint = String.valueOf(x);
 
         //with extract().response() we can store the response in response variable
-        Response response = given().body("{\"name\":\"Pranjay" + x + "\",\"salary\":\"200\",\"age\":\"27\"}")
+        Response response = given().log().all().proxy("wagcorppac.walgreens.com",8080).body("{\"name\":\"Pranjay" + x + "\",\"salary\":\"200\",\"age\":\"27\"}")
                 .when().post("api/v1/create")
                 .then().statusCode(200).contentType("text/html")
                 .extract().response(); // it will help to get the response extract in response

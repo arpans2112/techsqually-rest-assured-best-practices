@@ -1,4 +1,4 @@
-package api.common.abstractapiutil;
+package api.common.applicaiton.zippopotam.abstractapiutil;
 
 
 import io.restassured.builder.RequestSpecBuilder;
@@ -7,8 +7,6 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.testng.annotations.BeforeTest;
-
-import java.util.HashMap;
 
 public class AbstractBaseZippopotamAPIUtil {
 

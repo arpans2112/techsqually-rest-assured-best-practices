@@ -1,6 +1,6 @@
 package api.restassured.libarary.basics.get;
 
-import api.common.abstractapiutil.AbstractBaseZippopotamAPIUtil;
+import api.common.applicaiton.zippopotam.abstractapiutil.AbstractBaseZippopotamAPIUtil;
 import org.testng.annotations.Test;
 
 
