@@ -4,12 +4,15 @@ package utilities.api;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.validation.constraints.NotNull;
 import java.util.Map;
 import java.util.UUID;
 
 public class ApiEvent {
     private static final Logger logger = LoggerFactory.getLogger(ApiEvent.class);
     private String body ;
+    @NotNull
     private String name;
     private String topicName ;
     private String schemaName ;
@@ -31,8 +34,6 @@ public class ApiEvent {
         this.partition = partition;
 
     }
-
-   public static ApiEventBuilder builder() {return new ApiEventBuilder();}
 
 
     public String getBody() {

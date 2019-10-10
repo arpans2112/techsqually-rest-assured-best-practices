@@ -4,10 +4,7 @@ headers:
   requestType: GET
   apiServer: default
 
-
-
-serviceName: /api/v1/create
+ServiceName: /api/v1/create
 defaultBodyPath: data/dummy/features/employee/createEmployee.json
-
 
 

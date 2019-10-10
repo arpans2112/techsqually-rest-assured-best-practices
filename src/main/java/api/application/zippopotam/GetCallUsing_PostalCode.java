@@ -25,8 +25,4 @@ public class GetCallUsing_PostalCode {
 
     }
 
-
-
-
-
 }

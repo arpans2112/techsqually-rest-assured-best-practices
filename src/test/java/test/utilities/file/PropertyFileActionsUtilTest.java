@@ -61,7 +61,6 @@ public class PropertyFileActionsUtilTest {
 
         PropertyFileActionsUtil.updateProperties("test/api","default-api", revertData);
 
-
     }
 
 

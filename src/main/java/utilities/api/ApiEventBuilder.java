@@ -29,12 +29,16 @@ public class ApiEventBuilder {
 
         try {
           TopicMetaData topicMetaData =  ResourceUtils.readYamlResource(microServiceName,yamlFileName,TopicMetaData.class);
-
+          this.serviceName = topicMetaData.getServiceName();
+          this.schemaName = topicMetaData.getSchemaName();
+          this.partition = topicMetaData.getPartition();
+          this.headers = topicMetaData.getHeaders();
+          this.body = topicMetaData.getDefaultBodyPath();
+          this.schemaNameKey = topicMetaData.getSchemaNameKey();
 
         } catch (IOException e) {
             throw new RuntimeException("Unable to read topic metadata : {} " +  e.getLocalizedMessage());
         }
-
 
         return this;
     }
@@ -50,7 +54,33 @@ public class ApiEventBuilder {
         return this;
      }
 
+    public ApiEventBuilder name(String name) {
+        this.name = name;
+        return this;
+    }
 
+    public ApiEventBuilder topicName(String name) {
+        this.topicName = topicName;
+        return this;
+    }
 
+    public ApiEventBuilder schemaName(String schemaName) {
+        this.schemaName = schemaName;
+        return this;
+    }
+
+    public ApiEventBuilder schemaNameKey(String schemaNameKey) {
+        this.schemaNameKey = schemaNameKey;
+        return this;
+    }
+
+    public ApiEventBuilder buildServiceName(Object... params) {
+        this.serviceName = String.format(this.serviceName, params);
+        return this;
+    }
+
+    public ApiEvent build() {
+        return new ApiEvent(this.body, this.name, this.topicName, this.schemaName, this.serviceName, this.headers, this.bodyKey, this.schemaNameKey, this.partition);
+    }
 
 }
