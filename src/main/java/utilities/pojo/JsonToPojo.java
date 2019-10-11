@@ -28,6 +28,7 @@
          }
      }
 
+
      public void convert2JSON(URL inputJson, File outputPojoDirectory, String packageName, String className) throws IOException{
          JCodeModel codeModel = new JCodeModel();
 

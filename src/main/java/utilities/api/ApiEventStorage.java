@@ -8,13 +8,24 @@ public class ApiEventStorage {
     private static ApiEventStorage instance ;
     private LinkedHashMap<String, LinkedList<ApiEvent>> producedEvents = new LinkedHashMap<>();
     private LinkedHashMap<String, LinkedList<ApiEvent>> consumedEvents = new LinkedHashMap<>();
-
     private String lastEventNameProduced;
     private String lastEventNameConsumed;
 
+    public String getLastEventNameProduced() {
+        return lastEventNameProduced;
+    }
 
+    public void setLastEventNameProduced(String lastEventNameProduced) {
+        this.lastEventNameProduced = lastEventNameProduced;
+    }
 
+    public String getLastEventNameConsumed() {
+        return lastEventNameConsumed;
+    }
 
+    public void setLastEventNameConsumed(String lastEventNameConsumed) {
+        this.lastEventNameConsumed = lastEventNameConsumed;
+    }
 
     private ApiEventStorage(){
         instance = this;
