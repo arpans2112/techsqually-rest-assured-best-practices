@@ -1,6 +1,6 @@
 package api.restassured.libarary.basics.json;
 
-import utilities.file.JsonUtils;
+import utilities.file.JsonUtil;
 
 import static io.restassured.path.json.JsonPath.from;
 
@@ -8,7 +8,7 @@ public class Collect {
 
     public static void main(String[] args) {
 
-        String jsonString = JsonUtils.readJsonFileAsString("jsons","books");
+        String jsonString = JsonUtil.readJsonFileAsString("jsons","books");
 
 
         /*

@@ -1,10 +1,8 @@
 package api.restassured.libarary.jsonpath.filteroperators;
 
 import com.jayway.jsonpath.JsonPath;
-import org.junit.Test;
-import utilities.file.JsonUtils;
+import utilities.file.JsonUtil;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +17,7 @@ public class FilterOperatorsTest {
          *         https://github.com/json-path/JsonPath
         * */
 
-        String jsonString = JsonUtils.readJsonFileAsString("jsonpath","jsonPathTest");
+        String jsonString = JsonUtil.readJsonFileAsString("jsonpath","jsonPathTest");
 
         /**
          * To get all the Authors

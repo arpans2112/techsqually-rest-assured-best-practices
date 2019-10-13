@@ -2,7 +2,7 @@ package api.restassured.libarary.jsonpath.filterpredicates;
 
 import com.jayway.jsonpath.Filter;
 import com.jayway.jsonpath.JsonPath;
-import utilities.file.JsonUtils;
+import utilities.file.JsonUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +15,7 @@ public class FilterPredicate {
 
     public static void main(String[] args) {
 
-        String jsonString = JsonUtils.readJsonFileAsString("jsonpath","jsonPathTest");
+        String jsonString = JsonUtil.readJsonFileAsString("jsonpath","jsonPathTest");
 
         Filter cheapFictionFilter = filter(
                 where("category").is("fiction").and("price").lte(10D)

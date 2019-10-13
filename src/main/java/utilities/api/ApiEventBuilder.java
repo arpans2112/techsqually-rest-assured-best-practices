@@ -1,5 +1,6 @@
 package utilities.api;
 
+import io.restassured.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utilities.file.ResourceUtils;
@@ -23,6 +24,8 @@ public class ApiEventBuilder {
 
     public ApiEventBuilder() {
     }
+
+
 
 
     public ApiEventBuilder applyDefaultForTopic(String microServiceName, String yamlFileName){
@@ -79,7 +82,7 @@ public class ApiEventBuilder {
         return this;
     }
 
-    public ApiEvent build() {
+    public ApiEvent apiEventBuild() {
         return new ApiEvent(this.body, this.name, this.topicName, this.schemaName, this.serviceName, this.headers, this.bodyKey, this.schemaNameKey, this.partition);
     }
 

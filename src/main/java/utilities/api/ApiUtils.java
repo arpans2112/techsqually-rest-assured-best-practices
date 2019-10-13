@@ -38,54 +38,9 @@ public class ApiUtils extends BaseStep {
 
              Object[] serviceNameReplace =  paramStream.map(parameters::get).toArray();
 
-             ApiEvent apiPreparedEvent = new ApiEventBuilder().applyDefaultForTopic("dummy/api","createEmployee").buildServiceName(serviceNameReplace).name(apiEventName).build();
+             ApiEvent apiPreparedEvent = new ApiEventBuilder().applyDefaultForTopic("dummy/api","createEmployee").buildServiceName(serviceNameReplace).name(apiEventName).apiEventBuild();
              this.apiEventStorage.addProducted(apiPreparedEvent);
              return apiPreparedEvent;
     }
-
-
-   /* public ApiEvent sendApiCall( ApiEvent apiPreparedEvent, String responseEventName){
-
-
-
-        Map<String,String> headers = apiPreparedEvent.getHeaders();
-        String resonseEventName = !responseEventName.isEmpty() ? responseEventName : UUID.randomUUID().toString();
-        Map<String,Object> requestBodyData = new HashMap<>();
-
-
-        if (apiPreparedEvent.getName().equalsIgnoreCase(resonseEventName)){
-
-            String newEventName = resonseEventName + "-request";
-            apiPreparedEvent.setName(newEventName);
-            this.apiEventStorage.setLastEventNameProduced(newEventName);
-
-        }
-
-        data.forEach((k,v) -> {
-
-            if (k.toLowerCase().startsWith("~")){
-                parameters.put(k,v);
-            }else{
-                requestBodyData.put(k,v);
-            }
-
-        });
-
-
-        Stream paramStream = parameters.keySet().stream().sorted().filter(s -> {
-            return s.toLowerCase().startsWith("~param");
-        });
-
-//             parameters.getClass();
-
-        Object[] serviceNameReplace =  paramStream.map(parameters::get).toArray();
-
-        ApiEvent apiPreparedEvent = new ApiEventBuilder().applyDefaultForTopic("dummy/api","createEmployee").buildServiceName(serviceNameReplace).name(apiEventName).build();
-//              apiPreparedEvent.setBody();
-        this.apiEventStorage.addProducted(apiPreparedEvent);
-        return apiPreparedEvent;
-    }
-*/
-
 
 }

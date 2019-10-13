@@ -9,7 +9,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.File;
 import java.io.IOException;
 
-public class JsonUtils {
+public class JsonUtil {
 
   private ObjectMapper mapper = new ObjectMapper();
 

@@ -7,7 +7,7 @@ public class ApiEventStorage {
 
     private static ApiEventStorage instance ;
     private LinkedHashMap<String, LinkedList<ApiEvent>> producedEvents = new LinkedHashMap<>();
-    private LinkedHashMap<String, LinkedList<ApiEvent>> consumedEvents = new LinkedHashMap<>();
+    private LinkedHashMap<String, LinkedList<ApiResponseEvent>> consumedEvents = new LinkedHashMap<>();
     private String lastEventNameProduced;
     private String lastEventNameConsumed;
 
@@ -143,7 +143,7 @@ public class ApiEventStorage {
     }
 
 
-    public ApiEvent getConsumedEventWithName(String eventName) {
+    public ApiResponseEvent getConsumedEventWithName(String eventName) {
         if (this.consumedEvents.containsKey(eventName)){
             return this.consumedEvents.get(eventName).getFirst();
         }else {
@@ -152,7 +152,7 @@ public class ApiEventStorage {
     }
 
 
-    public ApiEvent getLastEventConsumed() {
+    public ApiResponseEvent getLastEventConsumed() {
         return this.consumedEvents.get(this.lastEventNameConsumed).getFirst();
     }
 

@@ -1,6 +1,6 @@
 package api.restassured.libarary.basics.json.from;
 
-import utilities.file.JsonUtils;
+import utilities.file.JsonUtil;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public class findAllFuntion {
 
     public static void main(String[] args) {
 
-       String jsonString = JsonUtils.readJsonFileAsString("jsons","books");
+       String jsonString = JsonUtil.readJsonFileAsString("jsons","books");
 
       List<String> bookTitle = from(jsonString).getList("store.book.findAll { it.price < 10 }.title");
       /*Returns : [Sayings of the Century, Moby Dick]*/

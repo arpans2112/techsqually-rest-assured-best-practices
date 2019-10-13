@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.*;
 import com.jayway.jsonpath.*;
+import com.jayway.jsonpath.internal.JsonFormatter;
 import com.jayway.jsonpath.spi.json.JacksonJsonNodeJsonProvider;
 import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 import org.junit.Assert;
@@ -164,6 +165,26 @@ public class JsonUtil {
     public static  ReadContext readResponseAsReadContext(String jsonString){
         ReadContext readContext = JsonPath.parse(jsonString);
         return readContext;
+    }
+
+
+    public static boolean isJsonStringprettify(String jsonString) {
+
+        try {
+             JsonFormatter.prettyPrint(jsonString);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+    public static String prettifyJson(String jsonString) {
+
+        if (isJsonStringprettify(jsonString))
+              return JsonFormatter.prettyPrint(jsonString);
+        else{
+            throw new RuntimeException(jsonString + " is not pritffyString");
+        }
     }
 
 
