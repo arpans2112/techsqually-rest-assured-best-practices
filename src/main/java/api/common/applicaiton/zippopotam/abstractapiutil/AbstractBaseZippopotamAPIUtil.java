@@ -17,7 +17,6 @@ public class AbstractBaseZippopotamAPIUtil {
 
     @BeforeTest
     public void requestSpecificationBuilder(){
-
    /*     HashMap<String,String> abc = new HashMap<>();
         abc.put("Cache-Control","no-cache");
         abc.put("Host","api.zippopotam.us");
@@ -26,8 +25,6 @@ public class AbstractBaseZippopotamAPIUtil {
         abc.put("Connection","keep-alive");
         abc.put("Postman-Token","d0c8a5a0-7010-496c-85fc-4c7ee1f9128f");
         abc.put("User-Agent","PostmanRuntime/7.17.1");*/
-
-
 
      requestSpecification = new RequestSpecBuilder().
                                        setBaseUri("http://api.zippopotam.us").setProxy("wagcorppac.walgreens.com",8080).
